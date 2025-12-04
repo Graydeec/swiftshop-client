@@ -99,7 +99,10 @@ const ShopContextProvider = (props) => {
       if (response.data.success) {
         setCartItems(response.data.cartData);
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
   };
 
   const getCartAmount = () => {
